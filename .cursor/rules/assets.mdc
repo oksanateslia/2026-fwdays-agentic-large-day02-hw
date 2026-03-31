@@ -1,0 +1,24 @@
+---
+description: "Asset location conventions"
+globs: "**/*.{png,jpg,jpeg,gif,svg,webp,ico,avif,bmp,tif,tiff,mp4,webm,mp3,wav,ogg,pdf,woff,woff2,ttf,otf,eot}"
+alwaysApply: true
+---
+
+# Asset Locations
+
+## Context
+The repo keeps assets grouped by consumer so paths stay predictable.
+
+## Rules for adding/updating assets
+- all logo MUST be added in public/icons/ directory, and referenced from there
+- Runtime/static assets go in `public/` (or `examples/**/public/` for examples) and are referenced from the public root.
+- Docs images live in `dev-docs/docs/assets/` and are referenced with relative MDX paths.
+- Docusaurus site chrome images live in `dev-docs/static/img/`.
+- Font sources live in `packages/excalidraw/fonts/`, and raw TTF inputs live in `scripts/woff2/assets/`.
+- README/badge assets live in `.github/assets/`.
+- When self-hosting fonts/assets, serve them from a public path and set `window.EXCALIDRAW_ASSET_PATH` to that base.
+
+## How to verify
+- Confirm new assets are placed under the expected directory for their consumer.
+- Ensure references resolve (MDX relative paths, public URLs, `EXCALIDRAW_ASSET_PATH`).
+- Run the relevant app/docs build for the area you touched.

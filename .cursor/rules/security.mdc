@@ -1,0 +1,32 @@
+---
+description: "Security checks"
+globs: "packages/**/*.{ts,tsx,js,jsx},excalidraw-app/**/*.{ts,tsx,js,jsx},examples/**/*.{ts,tsx,js,jsx},scripts/**/*.{js,ts}"
+alwaysApply: true
+---
+
+# Security Checks
+
+## Context
+Keep changes secure, minimize data exposure, and avoid introducing known vulnerabilities.
+
+## Rules for adding/updating code:
+
+- Validate and sanitize user-controlled input before use or persistence
+- Avoid leaking secrets or PII in logs, errors, or telemetry payloads
+- Use safe defaults for auth, permissions, and data visibility; deny by default
+- Use `URL` parsing, `JSON.parse`, and other parsers defensively with try/catch
+- Prefer existing vetted helpers over introducing new security-sensitive code paths
+
+## Rules for dependencies:
+
+- Avoid adding new dependencies without explicit approval
+- Review new or updated dependencies for known vulnerabilities
+- Keep dependency scope minimal and avoid unused packages
+
+## How to verify
+- Review changes for data flow from untrusted sources to sinks
+- Confirm secrets are not added to code, configs, or fixtures
+- Run `yarn audit` if dependency changes are included
+- Ensure security-related errors include context but no sensitive data
+- Verify auth and permission checks cover new code paths
+

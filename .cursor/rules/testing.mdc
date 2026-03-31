@@ -1,0 +1,26 @@
+---
+description: "Testing conventions"
+globs: "packages/**/tests/**/*.{ts,tsx,js,jsx},packages/**/__tests__/**/*.{ts,tsx,js,jsx},packages/**/*.{test,spec}.{ts,tsx,js,jsx},excalidraw-app/tests/**/*.{ts,tsx,js,jsx}"
+alwaysApply: true
+---
+
+# Test Changes
+
+## Context
+Keep test changes reliable, readable, and aligned with existing project conventions.
+
+## Rules for adding/updating tests:
+
+- Keep tests co-located with the feature and follow existing naming conventions
+- Ensure new failure cases include clear assertions for expected behavior
+- NEVER introduce non-deterministic tests (timers/network) without a stable deterministic strategy
+- DO NOT add or update snapshots/fixtures without confirming the changes are intentional
+- AVOID duplicating setup logic; reuse shared helpers where available
+
+## How to verify
+- Review test changes for determinism, naming, and co-location
+- Confirm snapshot/fixture diffs are intentional
+- Run the relevant test suite(s) for the changed area
+- Run `yarn test:typecheck` to catch type errors introduced by test changes
+- Run `yarn test:update` only when snapshot/fixture updates are intended and valid for this repo
+- All verification commands must be valid for this project and align with existing scripts
