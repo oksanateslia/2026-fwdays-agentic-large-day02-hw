@@ -1,7 +1,7 @@
 ---
 description: "Asset location conventions"
 globs: "**/*.{png,jpg,jpeg,gif,svg,webp,ico,avif,bmp,tif,tiff,mp4,webm,mp3,wav,ogg,pdf,woff,woff2,ttf,otf,eot}"
-alwaysApply: true
+alwaysApply: false
 ---
 
 # Asset Locations

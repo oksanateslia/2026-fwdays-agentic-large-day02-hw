@@ -16,6 +16,10 @@ Keep changes secure, minimize data exposure, and avoid introducing known vulnera
 - Use safe defaults for auth, permissions, and data visibility; deny by default
 - Use `URL` parsing, `JSON.parse`, and other parsers defensively with try/catch
 - Prefer existing vetted helpers over introducing new security-sensitive code paths
+- Treat SVG as untrusted input: strip scripts/foreignObject/event handlers, avoid inline HTML, and prefer vetted SVG export helpers
+- Keep CSP intact: avoid inline scripts/styles or `unsafe-*` relaxations; document any required exceptions with rationale
+- Handle `.excalidraw` payloads as untrusted JSON: validate shape/version, cap size, and avoid auto-executing embedded data
+- Preserve collab encryption: never bypass `encryptData`/`decryptData`, keep metadata minimal, and log errors without payloads
 
 ## Rules for dependencies:
 
@@ -29,4 +33,3 @@ Keep changes secure, minimize data exposure, and avoid introducing known vulnera
 - Run `yarn audit` if dependency changes are included
 - Ensure security-related errors include context but no sensitive data
 - Verify auth and permission checks cover new code paths
-
