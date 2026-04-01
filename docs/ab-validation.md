@@ -77,4 +77,4 @@ export const AppFooterLogo = React.memo(() => {
   pointer-events: none;
 }
 ```
-- **Conclusion**: Approach A scopes assets under `public/icons/`, uses a smaller, more explicit CSS module API (`root`/`image`), and standardizes sizing at 18px; Approach B places the asset at the public root, uses more verbose class names (`footerLogo`/`footerLogoImage`), and uses 16px sizing with slightly lower opacity.
+- **Conclusion**: Approach B scopes assets under `public/icons/`, uses a smaller, more explicit CSS module API (`root`/`image`), and standardizes sizing at 18px; Approach A places the asset at the public root, uses more verbose class names (`footerLogo`/`footerLogoImage`), and uses 16px sizing with slightly lower opacity.

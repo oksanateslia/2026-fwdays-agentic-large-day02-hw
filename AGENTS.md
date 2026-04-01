@@ -25,21 +25,15 @@ Excalidraw is a **monorepo** with a clear separation between the core library an
 
 1. **Package Development**: Work in `packages/*` for editor features
 2. **App Development**: Work in `excalidraw-app/` for app-specific features
-3. **Testing**: Always run `yarn test:update` before committing
+3. **Testing**: Run the relevant test suite(s) for your changes
 4. **Type Safety**: Use `yarn test:typecheck` to verify TypeScript
 
 ## Development Commands
 
-
-<CodeBlockWrapper v-bind="{}" :ranges='[]'>
-
 ```bash
 yarn test:typecheck  # TypeScript type checking
-yarn test:update     # Run all tests (with snapshot updates)
 yarn fix             # Auto-fix formatting and linting issues
 ```
-
-</CodeBlockWrapper>
 
 ## Conventions
 
